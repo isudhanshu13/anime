@@ -14,7 +14,14 @@ html,body{
     position: relative;
     overflow: hidden;
 }
-#page{
+body {
+    overflow-x: hidden;
+}
+#page, #page1, #page2, #page3 {
+    min-height: 100vh;  /* instead of height */
+    width: 100%;
+}
+/* #page{
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -37,7 +44,7 @@ html,body{
     height: 100vh;
     width: 100vw;
     
-}
+} */
 canvas{
     position: relative;
     /* z-index: 9; */
@@ -50,7 +57,7 @@ canvas{
     top: 30%;
     height: 25%;
     width: 100%;
-    font-size: 100px;
+    font-size: clamp(30px, 8vw, 100px);
     white-space: nowrap;
     font-family: gilroy;
 }
@@ -216,3 +223,98 @@ canvas{
  h2{
     z-index: 100;
  }
+
+/* ===== RESPONSIVE FIX ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+
+  #loop {
+    font-size: 40px;
+    top: 20%;
+  }
+
+  #page>h3 {
+    font-size: 14px;
+    top: 50%;
+    left: 5%;
+  }
+
+  #page>h4 {
+    top: 65%;
+    left: 10%;
+    font-size: 14px;
+  }
+
+  #page1>#right-text,
+  #page1>#left-text {
+    position: static;
+    text-align: center;
+    margin: 20px;
+  }
+
+  #page1>#right-text>h1,
+  #page1>#left-text>h1 {
+    font-size: 28px;
+  }
+
+  #page2>#text1,
+  #page2>#text2 {
+    position: static;
+    text-align: center;
+    margin: 20px;
+  }
+
+  #page2>#text1>h1 {
+    font-size: 30px;
+  }
+
+  #page3>#text3 {
+    position: static;
+    text-align: center;
+    margin-top: 50%;
+  }
+
+  #page3>#text3>h1 {
+    font-size: 35px;
+  }
+
+  .compose-btn1 {
+    position: static;
+    display: inline-block;
+    margin-top: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+  #nav {
+    padding: 10px;
+  }
+
+  #nav>h3 {
+    font-size: 16px;
+  }
+
+  .compose-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  #loop {
+    font-size: 28px;
+  }
+
+  #page>h3 {
+    font-size: 12px;
+  }
+
+  #page1>#right-text>h1,
+  #page1>#left-text>h1,
+  #page2>#text1>h1,
+  #page3>#text3>h1 {
+    font-size: 22px;
+  }
+
+}
