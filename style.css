@@ -38,6 +38,7 @@ html,body{
     width: 100vw;
     
 }
+
 canvas{
     position: relative;
     /* z-index: 9; */
